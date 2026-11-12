@@ -1,0 +1,57 @@
+backend:
+  name: github
+  repo: pedralba10/davidballesterosbarrio.github.io
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+# Configure GitHub OAuth on a Netlify site (callback: https://api.netlify.com/auth/done).
+# Replace this with that Netlify site's ID; never store the OAuth client secret here.
+site_id: fde74996-b69d-4ba3-a4de-8e688b716604
+
+media_folder: ""
+public_folder: ""
+
+collections:
+  - name: portfolio
+    label: Portfolio
+    files:
+      - name: home
+        label: Contenido principal
+        file: content/portfolio.json
+        fields:
+          - label: Descripción del sitio
+            name: siteDescription
+            widget: string
+          - label: Titular principal
+            name: heroTitle
+            widget: string
+          - label: Nombre y formación
+            name: heroName
+            widget: string
+          - label: Presentación
+            name: heroDescription
+            widget: text
+          - label: Titular del perfil
+            name: profileTitle
+            widget: string
+          - label: Resumen del perfil
+            name: profileDescription
+            widget: text
+          - label: Introducción de destacados
+            name: highlightsIntro
+            widget: text
+          - label: Resumen de experiencia
+            name: experienceSummary
+            widget: text
+          - label: Título del proyecto destacado
+            name: projectTitle
+            widget: string
+          - label: Descripción del proyecto destacado
+            name: projectDescription
+            widget: text
+          - label: CV en PDF
+            name: cvFile
+            widget: file
+            required: false
+            hint: Sube el archivo con el nombre CV_David_Ballesteros_Barrio.pdf para reemplazar el CV en la raíz del sitio.
