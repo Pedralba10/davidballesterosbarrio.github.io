@@ -1,13 +1,13 @@
 backend:
+  backend:
   name: github
   repo: pedralba10/davidballesterosbarrio.github.io
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
-
-# Configure GitHub OAuth on a Netlify site (callback: https://api.netlify.com/auth/done).
-# Replace this with that Netlify site's ID; never store the OAuth client secret here.
-site_id: fde74996-b69d-4ba3-a4de-8e688b716604
+  site_id: fde74996-b69d-4ba3-a4de-8e688b716604
+  # Configure GitHub OAuth on a Netlify site (callback: https://api.netlify.com/auth/done).
+  # Replace this with that Netlify site's ID; never store the OAuth client secret here.
 
 media_folder: ""
 public_folder: ""
