@@ -1,0 +1,7 @@
+/node_modules/
+/_site/
+/admin/
+/tina/__generated__/
+/.env
+/.env.*
+!/.env.example

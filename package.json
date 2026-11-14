@@ -1,0 +1,14 @@
+{
+  "name": "davidballesterosbarrio.github.io",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/check-tina-env.mjs && tinacms build && node scripts/build-static-site.mjs"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "4.0.5",
+    "@types/react": "^18.3.26",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tinacms": "3.15.2"
+  }
+}
