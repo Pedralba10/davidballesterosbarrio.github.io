@@ -1,13 +1,13 @@
 {
-  "heroDescription": "Aporto una sólida base técnica en lógica de servidor y bases de datos relacionales, respaldada por mi doble titulación como Técnico Superior en DAM y DAW y mi experiencia práctica en Getronics. Combino desarrollo Back-End y Android con resiliencia operativa y resolución de problemas en entornos críticos: estoy preparado para contribuir desde el primer día.",
+  "heroDescription": "Soy Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) y he cursado el ciclo de Desarrollo de Aplicaciones Web (DAW), pendiente únicamente de la defensa del Trabajo de Fin de Grado (TFG). Esta formación y mi experiencia práctica en Getronics respaldan una sólida base técnica en lógica de servidor y bases de datos relacionales. Combino desarrollo Back-End y Android con resiliencia operativa y resolución de problemas en entornos críticos.",
   "projectDescription": "Enfoque técnico en desarrollo y mantenimiento de lógica de servidor, gestión de datos relacionales y control de versiones con Git, aplicado a soluciones Back-End mantenibles.",
-  "heroName": "David Ballesteros Barrio · Técnico Superior en DAM y DAW",
-  "highlightsIntro": "Formación superior en DAM y DAW, experiencia Back-End en un entorno corporativo y competencias en desarrollo nativo Android.",
+  "heroName": "David Ballesteros Barrio · Técnico Superior en DAM | DAW cursado, pendiente de defensa del TFG",
+  "highlightsIntro": "Título de Técnico Superior en DAM y ciclo DAW cursado, pendiente de defensa del TFG; experiencia Back-End en un entorno corporativo y competencias en desarrollo nativo Android.",
   "cvFile": "content/cv-david-ballesteros-barrio.pdf",
-  "profileTitle": "Doble titulación. Experiencia real.",
-  "profileDescription": "Formación superior en DAM y DAW, con prácticas Back-End en Getronics y enfoque en Android nativo y bases de datos relacionales.",
-  "siteDescription": "David Ballesteros Barrio, Desarrollador de Software Junior (DAM y DAW), con experiencia Back-End en Getronics y conocimientos de Android nativo, Java, Python y bases de datos relacionales.",
+  "profileTitle": "DAM titulado · DAW cursado",
+  "profileDescription": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM); ciclo de Desarrollo de Aplicaciones Web (DAW) cursado, a falta de la defensa del TFG. Experiencia Back-End en Getronics y enfoque en Android nativo y bases de datos relacionales.",
+  "siteDescription": "David Ballesteros Barrio, Desarrollador de Software Junior y Técnico Superior en DAM. Ciclo DAW cursado, pendiente de defensa del TFG. Experiencia Back-End en Getronics y conocimientos de Android nativo, Java, Python y bases de datos relacionales.",
   "experienceSummary": "Experiencia práctica de desarrollo en Getronics y trayectoria en cuadrillas forestales y mantenimiento, con disciplina operativa, coordinación multidisciplinar y resolución ágil de problemas bajo presión.",
-  "heroTitle": "Desarrollador de Software Junior (DAM + DAW) | Back-End & Android",
+  "heroTitle": "Desarrollador de Software Junior | DAM · DAW (TFG pendiente) | Back-End & Android",
   "projectTitle": "Arquitectura Back-End."
 }
