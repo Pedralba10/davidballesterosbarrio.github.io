@@ -1,8 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-  identity_url: https://dainty-puffpuff-2bac53.netlify.app/.netlify/identity
-  gateway_url: https://dainty-puffpuff-2bac53.netlify.app/.netlify/git
+  base_url: https://dainty-puffpuff-2bac53.netlify.app
 
 media_folder: ""
 public_folder: ""
