@@ -1,6 +1,8 @@
+const siteRoot = new URL(".", document.currentScript?.src || window.location.href);
+
 async function loadPortfolioContent() {
 	try {
-		const response = await fetch("content/portfolio.json", { cache: "no-store" });
+		const response = await fetch(new URL("content/portfolio.json", siteRoot), { cache: "no-store" });
 		if (!response.ok) {
 			throw new Error(`HTTP ${response.status}`);
 		}
@@ -48,7 +50,7 @@ function updateCvLinks(filePath) {
 
 	let fileUrl;
 	try {
-		fileUrl = new URL(filePath, document.baseURI);
+		fileUrl = new URL(filePath.trim().replace(/^\/+/, ""), siteRoot);
 	} catch (error) {
 		console.error("La ruta del CV configurada en el CMS no es válida.", error);
 		return;
