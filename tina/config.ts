@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import { defineConfig } from "tinacms";
 
 export default defineConfig({
