@@ -8,7 +8,8 @@ export default defineConfig({
 	token: process.env.TINA_TOKEN || null,
 	build: {
 		publicFolder: ".",
-		outputFolder: "admin",
+    	outputFolder: "admin",
+    	basePath: "davidballesterosbarrio.github.io",
 	},
 	media: {
 		tina: {
