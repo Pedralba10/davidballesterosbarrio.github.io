@@ -2,7 +2,7 @@
   "name": "davidballesterosbarrio.github.io",
   "private": true,
   "scripts": {
-    "build": "node scripts/check-tina-env.mjs && tinacms build && node scripts/build-static-site.mjs"
+    "build": "node scripts/check-tina-env.mjs && tinacms build --skip-cloud-checks && node scripts/build-static-site.mjs"
   },
   "devDependencies": {
     "@tinacms/cli": "4.0.5",
