@@ -13,3 +13,5 @@ TinaCMS administra `content/portfolio.json`; el campo del CV acepta únicamente 
 El workflow de GitHub Actions compila TinaCMS y publica el sitio; el panel estará disponible en `/admin/`.
 
 El acceso de los editores lo gestiona Tina Cloud mediante las cuentas autorizadas en el proyecto.
+
+Al abrir un documento desde `/admin/`, el editor previsualiza la página principal y permite seleccionar los campos de contenido haciendo clic sobre ellos. El sitio publicado sigue cargando `content/portfolio.json` como sitio estático.

@@ -25,7 +25,10 @@ export default defineConfig({
 				path: "content",
 				format: "json",
 				match: { include: "portfolio" },
-				ui: { global: true },
+				ui: {
+					global: true,
+					router: () => "/",
+				},
 				fields: [
 					{
 						type: "string",
