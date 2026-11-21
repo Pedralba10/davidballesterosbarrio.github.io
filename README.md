@@ -2,7 +2,7 @@
 
 ## TinaCMS
 
-TinaCMS administra `content/portfolio.json`; el campo del CV acepta únicamente archivos PDF y los medios se guardan en `content/`.
+TinaCMS administra `content/portfolio.json`, que contiene los textos de las cuatro páginas; el campo del CV acepta únicamente archivos PDF y los medios se guardan en `content/`.
 
 1. Crea un proyecto en [Tina Cloud](https://app.tina.io), conecta este repositorio y configura los usuarios autorizados.
 2. Ejecuta `npm ci`, copia `.env.example` a `.env` y añade el Client ID del proyecto y su token de solo lectura. No publiques el token.
@@ -14,4 +14,4 @@ El workflow de GitHub Actions compila TinaCMS y publica el sitio; el panel estar
 
 El acceso de los editores lo gestiona Tina Cloud mediante las cuentas autorizadas en el proyecto.
 
-Al abrir un documento desde `/admin/`, el editor previsualiza la página principal y permite seleccionar los campos de contenido haciendo clic sobre ellos. El sitio publicado sigue cargando `content/portfolio.json` como sitio estático.
+El documento aparece en **COLLECTIONS** y abre la página principal desde `/admin/`. Las cuatro páginas cargan el mismo contenido estático y permiten editar visualmente sus campos con clic en la vista previa; la navegación entre ellas conserva la edición contextual.

@@ -1,37 +1,5 @@
 const siteRoot = new URL(".", document.currentScript?.src || window.location.href);
 
-const tinaQuery = `query portfolio($relativePath: String!) {
-	portfolio(relativePath: $relativePath) {
-		... on Document {
-			_sys {
-				filename
-				basename
-				hasReferences
-				breadcrumbs
-				path
-				relativePath
-				extension
-			}
-			id
-		}
-		...PortfolioParts
-	}
-}
-
-fragment PortfolioParts on Portfolio {
-	__typename
-	heroTitle
-	heroDescription
-	heroName
-	highlightsIntro
-	profileTitle
-	profileDescription
-	siteDescription
-	experienceSummary
-	projectTitle
-	projectDescription
-	cvFile
-}`;
 const tinaVariables = { relativePath: "portfolio.json" };
 
 async function loadPortfolioContent() {
@@ -55,10 +23,18 @@ function updatePortfolioContent(content) {
 			continue;
 		}
 
-		if (field === "siteDescription") {
-			const description = document.querySelector('meta[name="description"]');
+		if (
+			field === "siteDescription" ||
+			field.endsWith("SiteDescription") ||
+			field.endsWith("PageTitle")
+		) {
+			const description = document.querySelector(`[data-cms-field="${field}"]`);
 			if (description) {
-				description.content = value;
+				if (description instanceof HTMLMetaElement) {
+					description.content = value;
+				} else {
+					description.textContent = value;
+				}
 			}
 			continue;
 		}
@@ -68,20 +44,54 @@ function updatePortfolioContent(content) {
 			continue;
 		}
 
-		const target = document.querySelector(`[data-cms-text="${field}"]`);
-		if (!target) {
-			continue;
+		if (field === "contactEmail" || field === "contactPhone") {
+			const links = document.querySelectorAll(`[data-cms-text="${field}"]`);
+			const href = field === "contactEmail"
+				? `mailto:${value.trim()}`
+				: `tel:${value.replace(/[^\d+]/g, "")}`;
+			for (const link of links) {
+				link.href = href;
+			}
 		}
 
-		if (field === "heroTitle" && target.firstChild?.nodeType === Node.TEXT_NODE) {
-			target.firstChild.textContent = value;
-		} else {
-			target.textContent = value;
+		for (const target of document.querySelectorAll(`[data-cms-text="${field}"]`)) {
+			const firstTextNode = Array.from(target.childNodes).find(
+				(node) => node.nodeType === Node.TEXT_NODE
+			);
+			if (firstTextNode) {
+				firstTextNode.textContent = value;
+			} else {
+				target.textContent = value;
+			}
 		}
 	}
 }
 
 function initializeTinaBridge(content) {
+	const fields = Object.keys(content).filter((field) => field !== "cvFile");
+	const tinaQuery = `query portfolio($relativePath: String!) {
+		portfolio(relativePath: $relativePath) {
+			... on Document {
+				_sys {
+					filename
+					basename
+					hasReferences
+					breadcrumbs
+					path
+					relativePath
+					extension
+				}
+				id
+			}
+			...PortfolioParts
+		}
+	}
+
+	fragment PortfolioParts on Portfolio {
+		__typename
+		${fields.join("\n\t\t")}
+		cvFile
+	}`;
 	const queryId = hashFromQuery(JSON.stringify({ query: tinaQuery, variables: tinaVariables }));
 	const tinaFieldElements = document.querySelectorAll("[data-cms-text], [data-cms-field]");
 	for (const element of tinaFieldElements) {
